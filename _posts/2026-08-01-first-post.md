@@ -10,6 +10,8 @@ image_alt: "Hands typing code on a laptop with programming text on screen, indoo
 tags:
   - Jekyll
   - Web Development
+
+featured: true
 ---
 
 # My First Post

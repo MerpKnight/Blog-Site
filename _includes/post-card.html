@@ -1,0 +1,66 @@
+<article class="post-card">
+
+    {% if include.post.image %}
+        <a href="{{ include.post.url | relative_url }}">
+            <img
+                src="{{ include.post.image | relative_url }}"
+                alt="{{ include.post.image_alt | default: include.post.title }}"
+                class="post-card-image">
+        </a>
+    {% endif %}
+
+    <div class="post-card-content">
+
+        {% if include.post.category %}
+            <a
+                href="{{ '/categories/' | relative_url }}#{{ include.post.category | slugify }}"
+                class="post-category">
+
+                {{ include.post.category }}
+
+            </a>
+        {% endif %}
+
+        <p class="post-date">
+            {{ include.post.date | date: "%B %d, %Y" }}
+        </p>
+
+        <h2 class="post-card-title">
+            <a href="{{ include.post.url | relative_url }}">
+                {{ include.post.title }}
+            </a>
+        </h2>
+
+        {% if include.post.description %}
+            <p class="post-description">
+                {{ include.post.description }}
+            </p>
+        {% endif %}
+
+        {% if include.post.tags %}
+            <div class="post-tags">
+
+                {% for tag in include.post.tags %}
+                    <a
+                        href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}"
+                        class="post-tag">
+
+                        {{ tag }}
+
+                    </a>
+                {% endfor %}
+
+            </div>
+        {% endif %}
+
+        <a
+            href="{{ include.post.url | relative_url }}"
+            class="read-more">
+
+            Continue Reading →
+
+        </a>
+
+    </div>
+
+</article>

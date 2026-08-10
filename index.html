@@ -15,4 +15,24 @@ title: Home
         View Blog
     </a>
 
+    <section class="featured-posts">
+
+    <div class="section-header">
+
+        <h2>Featured Posts</h2>
+        
+        {% assign featuredPosts = site.posts | where: "featured", true %}
+
+        <div class="post-grid">
+
+        {% for post in featuredPosts limit:3 %}
+
+          {% include post-card.html post=post %}
+
+        {% endfor %}
+
+        </div>
+    </div>
+  </section>
+
 </section>
