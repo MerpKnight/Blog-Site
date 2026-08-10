@@ -1,0 +1,51 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+---
+
+<section class="archive-page">
+
+    <h1>Archive</h1>
+
+    {% assign postsByYear = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+
+    {% for year in postsByYear %}
+
+        <section class="archive-year">
+
+            <h2>{{ year.name }}</h2>
+
+            {% assign postsByMonth = year.items | group_by_exp: "post", "post.date | date: '%B'" %}
+
+            {% for month in postsByMonth %}
+
+                <div class="archive-month">
+
+                    <h3>{{ month.name }}</h3>
+
+                    {% for post in month.items %}
+
+                        <article class="archive-post">
+
+                            <span class="archive-date">
+                                {{ post.date | date: "%B %d" }}
+                            </span>
+
+                            <a href="{{ post.url | relative_url }}">
+                                {{ post.title }}
+                            </a>
+
+                        </article>
+
+                    {% endfor %}
+
+                </div>
+
+            {% endfor %}
+
+        </section>
+
+    {% endfor %}
+
+</section>
