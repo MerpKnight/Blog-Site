@@ -1,18 +1,17 @@
-title: Sam's BlogHub
-description: A blog about programming, writing, and personal experiences.
+title: Sam's Blog
+description: Software development, projects, and things I'm learning.
 author: Samantha Smith
 
-url:
+url: ""
 baseurl: ""
 
 permalink: /blog/:year/:month/:day/:title/
 
-markdown:kramdown
+markdown: kramdown
 
 defaults:
   - scope:
-    path: ""
-    type: "posts"
-    
+      path: ""
+      type: posts
     values:
-    layout: "post"
+      layout: post

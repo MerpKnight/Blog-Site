@@ -1,0 +1,37 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+<section class="tags-page">
+
+    <h1>Blog Tags</h1>
+
+    {% for tag in site.tags %}
+
+        <section class="tag-group" id="{{ tag[0] | slugify }}">
+
+            <h2>{{ tag[0] }}</h2>
+
+            {% for post in tag[1] %}
+
+                <article class="tag-post">
+
+                    <a href="{{ post.url | relative_url }}">
+                        {{ post.title }}
+                    </a>
+
+                    <span>
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </span>
+
+                </article>
+
+            {% endfor %}
+
+        </section>
+
+    {% endfor %}
+
+</section>
