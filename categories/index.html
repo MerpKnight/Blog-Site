@@ -1,0 +1,39 @@
+---
+layout: default
+title: Categories
+permalink: /categories/
+---
+
+<section class="categories-page">
+
+    <h1>Blog Categories</h1>
+
+    {% for category in site.categories %}
+
+        <section
+            class="category-group"
+            id="{{ category[0] | slugify }}">
+
+            <h2>{{ category[0] }}</h2>
+
+            {% for post in category[1] %}
+
+                <article class="category-post">
+
+                    <a href="{{ post.url | relative_url }}">
+                        {{ post.title }}
+                    </a>
+
+                    <span>
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </span>
+
+                </article>
+
+            {% endfor %}
+
+        </section>
+
+    {% endfor %}
+
+</section>

@@ -30,6 +30,16 @@ permalink: /blog/
 
             <div class="post-card-content">
 
+                {% if post.category %}
+
+                <a href="{{ '/categories/' | relative_url }}#{{ post.category | slugify }}"
+                    class="post-category">
+
+                    {{ post.category }}
+
+                </a>
+                {% endif %}
+
                 <p class="post-date">
                     {{ post.date | date: "%B %d, %Y" }}
                 </p>

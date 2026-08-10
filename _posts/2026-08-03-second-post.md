@@ -2,6 +2,9 @@
 title: "Learning Liquid"
 date: 2026-08-05
 description: "Experimenting with Liquid variables and templates."
+
+category: Continuing Education
+
 tags:
   - Jekyll
   - Liquid
