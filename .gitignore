@@ -141,3 +141,9 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+#site folders from Jekyll
+_site/
+.jekyll-cache/
+.sass-cache/
+.jekyll-metadata
