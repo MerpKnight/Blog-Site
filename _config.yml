@@ -15,3 +15,6 @@ defaults:
       type: posts
     values:
       layout: post
+
+#site information such as title, description, and author can be changed here
+#as well as links and site setup. For more information, see https://jekyllrb.com/docs/configuration/
