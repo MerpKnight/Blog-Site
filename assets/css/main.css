@@ -152,3 +152,89 @@
     min-width: 90px;
     opacity: 0.7;
 }
+
+/**Skip to main content**/
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+    z-index: 1000;
+    padding: 0.75rem 1rem;
+    background: white;
+    color: black;
+}
+
+/* main colors */
+header, footer {
+    background-color: #E37434;
+    color: #ffffff;
+}
+
+body {
+    background-color: #91C6BC;
+    color: #000000;
+}
+
+.post-card {
+    background-color: #F6F3C2;
+    color: #000000;
+}
+
+.hero {
+    background-color: #4B9DA9;
+    color: #000000;
+}
+
+/* Home page image cards */
+.home-images {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem 0 4rem;
+}
+
+.home-images img {
+    width: 32%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 18px;
+}
+
+.home {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/*plain image layering*/
+
+/* First image — left */
+.DLgame-image {
+    align-self: flex-start;
+}
+
+/* Second image — center */
+.Spriteful-solutions-home {
+    align-self: center;
+}
+
+/* Third image — right */
+.unity-tutorial-game {
+    align-self: flex-end;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .home-images {
+        grid-template-columns: 1fr;
+    }
+
+    .home-images img {
+        height: 220px;
+    }
+}

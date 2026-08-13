@@ -5,21 +5,42 @@ title: Home
 
 <section class="home">
 
-    <h1>Welcome to {{ site.title }}</h1>
+    <section class="hero">
+<!--hero section with welcome message and link to latest blog posts-->
+        <div class="hero-content">
 
-    <p>
-        This is my personal portfolio and blog.
-    </p>
+            <h1>Welcome to {{ site.title }}</h1>
+            <p>This is my personal portfolio and blog.</p>
 
-    <a href="{{ '/blog/' | relative_url }}">
-        Latest Blog Posts
-    </a>
+               <!--accessibility features-- TODOD: add working skip link to latest posts section-->
+            <a class="skip-link" href="#latest-posts">Land on latest posts </a>
 
-    <section class="featured-posts">
+        </div>
+    </section>
+
+    <section class="home-images" id="home-images">
+        <!--images of my work and projects-->
+        <img class= "DLgame-image" 
+        src="{{ '/assets/images/site-photos/Rem-fill-drawing.png' | relative_url }}" 
+        alt="A screenshot of the character Rem from Deadlock game, 
+        sitting on a ledge in the rain with two helpers with hearts behing him. Rem holds a sputtering candle in his hand. Drawn by Sam Smith.">
+
+        <img class="Spriteful-solutions-home" 
+        src="{{ '/assets/images/site-photos/Spriteful-solutions-logo.png' | relative_url }}" 
+        alt="The current Spriteful Solutions logo,
+        a work in progress logo with slightly curvy letters upon a white background with sparkles over a mountian peak.">
+
+        <img class="unity-tutorial-game" 
+        src="{{ '/assets/images/site-photos/unity-game-tutorial.png' | relative_url }}" 
+        alt="A screenshot of a Unity 2D tutorial game, made 
+        by Sam Smith. A small spacecraft with a red booster flame flies through green meteorites in a black space background and pink borders.">
+    </section>
+
+    <section class="latest-posts" id="latest-posts">
 
     <div class="section-header">
 
-        <h2>Featured Posts</h2>
+        <h2>Latest Posts</h2>
         
         {% assign featuredPosts = site.posts | where: "featured", true %}
 
